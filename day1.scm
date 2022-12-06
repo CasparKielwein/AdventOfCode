@@ -24,7 +24,7 @@
             
   
 ;; read the file
-(define contents (call-with-input-file "inputs/day1_1.txt" get-string-all))
+(define contents (call-with-input-file "inputs/day1.txt" get-string-all))
 
 ;; parse the file into a list of lists containing the "calories" of each elf as numbers
 (define (strings->numbers strings) (map (lambda (str) (string->number str)) strings))
@@ -40,7 +40,6 @@
 (define (largest-sum list-of-lists)
     (max-element (map sum list-of-lists)))
 
-    
 (define (take3 lst) (list (car lst) (cadr lst) (caddr lst)))
 
 (sum (take3 (sort (elf-lists) >)))
